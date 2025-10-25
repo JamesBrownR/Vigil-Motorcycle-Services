@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigil Motorcycle Services | Expert Motorcycle Repair in South Salt Lake</title>
+    <meta name="description" content="Professional motorcycle repair and maintenance services in South Salt Lake, UT. Expert care for your bike by Shane at Vigil Motorcycle Services.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #d32f2f;
+            --accent-color: #ff6b6b;
+            --text-light: #ffffff;
+            --text-dark: #1a1a1a;
+            --bg-light: #f5f5f5;
+            --bg-dark: #2a2a2a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Top Contact Bar */
+        .top-bar {
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 12px 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .top-bar a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .top-bar a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section - Full Screen */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--bg-dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 20px;
+            position: relative;
+            margin-top: 48px;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--secondary-color);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--text-light);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-light);
+            color: var(--primary-color);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-light);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .service-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Hours Section */
+        .hours {
+            background: white;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 25px;
+            background: var(--bg-light);
+            font-size: 1.1rem;
+        }
+
+        .day {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .time {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: var(--bg-light);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+        }
+
+        .review-body {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .load-more {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #ddd;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            min-width: 30px;
+        }
+
+        .info-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .info-content a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .info-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: var(--bg-light);
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .social-links {
+            margin: 20px 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .top-bar {
+                font-size: 0.9rem;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <a href="tel:+18017129304">📞 Call Now: (801) 712-9304</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>VIGIL MOTORCYCLE SERVICES</h1>
+            <p>Expert Motorcycle Repair & Maintenance in South Salt Lake</p>
+            <div class="hero-cta">
+                <a href="tel:+18017129304" class="btn btn-primary">Call Now</a>
+                <a href="#contact" class="btn btn-secondary">Get a Quote</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>General Maintenance</h3>
+                    <p>Regular maintenance to keep your motorcycle running smoothly. Oil changes, filter replacements, and comprehensive inspections.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Engine Repair</h3>
+                    <p>Expert diagnostics and repair for all engine issues. From minor tune-ups to complete engine rebuilds.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Brake Service</h3>
+                    <p>Complete brake system service including pad replacement, rotor resurfacing, and hydraulic system maintenance.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Electrical Systems</h3>
+                    <p>Troubleshooting and repair of electrical components, lighting, and charging systems.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Tire Service</h3>
+                    <p>Professional tire mounting, balancing, and replacement for optimal performance and safety.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Custom Work</h3>
+                    <p>Customization and modification services to make your motorcycle uniquely yours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section id="hours" class="hours">
+        <div class="container">
+            <h2 class="section-title">Business Hours</h2>
+            <div class="hours-grid">
+                <div class="hour-item">
+                    <span class="day">Monday</span>
+                    <span class="time">Closed</span>
+                </div>
+                <div class="hour-item">
+                    <span class="day">Tuesday</span>
+                    <span class="time">9 AM - 6 PM</span>
+                </div>
+                <div class="hour-item">
+                    <span class="day">Wednesday</span>
+                    <span class="time">9 AM - 6 PM</span>
+                </div>
+                <div class="hour-item">
+                    <span class="day">Thursday</span>
+                    <span class="time">9 AM - 6 PM</span>
+                </div>
+                <div class="hour-item">
+                    <span class="day">Friday</span>
+                    <span class="time">9 AM - 6 PM</span>
+                </div>
+                <div class="hour-item">
+                    <span class="day">Saturday</span>
+                    <span class="time">9 AM - 6 PM</span>
+                </div>
+                <div class="hour-item">
+                    <span class="day">Sunday</span>
+                    <span class="time">Closed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Reviews will be inserted here by JavaScript -->
+            </div>
+            <div class="load-more" id="loadMoreContainer">
+                <button class="btn btn-primary" id="loadMoreBtn">Show More Reviews</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h3>Address</h3>
+                            <p>3053 State St #5<br>South Salt Lake, UT 84115</p>
+                            <a href="https://www.google.com/maps/place/Vigil+Motorcycle+Services/@40.7045779,-111.8895152,17z/data=!4m16!1m9!3m8!1s0x87528b771e2f100b:0xf0f799ca9c46f127!2sVigil+Motorcycle+Services!8m2!3d40.7045779!4d-111.8869403!9m1!1b1!16s%2Fg%2F11r7nbrgd5!3m5!1s0x87528b771e2f100b:0xf0f799ca9c46f127!8m2!3d40.7045779!4d-111.8869403!16s%2Fg%2F11r7nbrgd5?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Google Maps</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h3>Phone</h3>
+                            <a href="tel:+18017129304">(801) 712-9304</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div class="info-content">
+                            <h3>Hours</h3>
+                            <p>Tue-Sat: 9 AM - 6 PM<br>Sun-Mon: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.610376818171!2d-111.88951522193584!3d40.70457787139492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87528b771e2f100b%3A0xf0f799ca9c46f127!2sVigil%20Motorcycle%20Services!5e0!3m2!1sen!2sus!4v1761433166556!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Vigil Motorcycle Services</h3>
+            <p>Expert motorcycle repair and maintenance by Shane</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/VigilMotorcycleServices/" target="_blank" aria-label="Facebook">📘</a>
+                <a href="https://www.google.com/maps/place/Vigil+Motorcycle+Services/@40.7045779,-111.8895152,17z/data=!4m16!1m9!3m8!1s0x87528b771e2f100b:0xf0f799ca9c46f127!2sVigil+Motorcycle+Services!8m2!3d40.7045779!4d-111.8869403!9m1!1b1!16s%2Fg%2F11r7nbrgd5!3m5!1s0x87528b771e2f100b:0xf0f799ca9c46f127!8m2!3d40.7045779!4d-111.8869403!16s%2Fg%2F11r7nbrgd5?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" aria-label="Google">🔍</a>
+            </div>
+            <p>&copy; 2025 Vigil Motorcycle Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Reviews Data - ADD YOUR REVIEWS HERE
+        const reviews = [
+            { name: "Customer 1", rating: 5, body: "" },
+            { name: "Customer 2", rating: 5, body: "" },
+            { name: "Customer 3", rating: 5, body: "" },
+            { name: "Customer 4", rating: 5, body: "" },
+            { name: "Customer 5", rating: 5, body: "" }
+        ];
+
+        let currentReviewIndex = 0;
+        const reviewsPerLoad = 6;
+
+        function renderStars(rating) {
+            return '⭐'.repeat(rating);
+        }
+
+        function loadReviews() {
+            const reviewsGrid = document.getElementById('reviewsGrid');
+            const endIndex = Math.min(currentReviewIndex + reviewsPerLoad, reviews.length);
+            
+            for (let i = currentReviewIndex; i < endIndex; i++) {
+                const review = reviews[i];
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'review-card';
+                reviewCard.innerHTML = `
+                    <div class="review-header">
+                        <span class="reviewer-name">${review.name}</span>
+                        <span class="stars">${renderStars(review.rating)}</span>
+                    </div>
+                    ${review.body ? `<div class="review-body">${review.body}</div>` : ''}
+                `;
+                reviewsGrid.appendChild(reviewCard);
+            }
+            
+            currentReviewIndex = endIndex;
+            
+            const remainingReviews = reviews.length - currentReviewIndex;
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const loadMoreContainer = document.getElementById('loadMoreContainer');
+            
+            if (remainingReviews > 0) {
+                loadMoreBtn.textContent = `Show ${remainingReviews} More Review${remainingReviews !== 1 ? 's' : ''} (Total ${reviews.length})`;
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+        }
+
+        document.getElementById('loadMoreBtn').addEventListener('click', loadReviews);
+
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+            
+            // CONFIGURE YOUR EMAIL SERVICE HERE
+            // For example, use EmailJS, Formspree, or your own backend
+            // Example with mailto (basic fallback):
+            const mailtoLink = `mailto:shane@vigilmotorcycle.com?subject=Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent('Name: ' + formData.name + '\nEmail: ' + formData.email + '\nPhone: ' + formData.phone + '\n\nMessage:\n' + formData.message)}`;
+            
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+            
+            // Uncomment the line below if you want to open the default email client
+            // window.location.href = mailtoLink;
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Initialize reviews on page load
+        window.addEventListener('DOMContentLoaded', loadReviews);
+
+        // SQUARE PAYMENTS INTEGRATION
+        // Replace YOUR_LOCATION_ID with your actual Square location ID
+        const SQUARE_LOCATION_ID = 'YOUR_LOCATION_ID';
+        
+        // Add Square payment integration here when ready
+        // Documentation: https://developer.squareup.com/docs/payment-form/setup
+    </script>
+</body>
+</html>
